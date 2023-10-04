@@ -1,0 +1,10 @@
+#metrostop-bttn {
+    box-shadow: 0 0px 8px 0px #8b8686;
+    width: 110px;
+    height: 29px;
+    background-color: white;
+    border-radius: 5px;
+}
+#metrostop-bttn:hover {
+    background-color: #05314D;
+}

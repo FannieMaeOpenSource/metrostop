@@ -1,0 +1,116 @@
+@import "./FieldMapper/FieldMapper.css";
+@import "../Popup/Popup.css";
+* { 
+    box-sizing: border-box;
+}
+#upload-event-bttn-text {
+    color:  #05314D;
+    font-size: 19px;
+    margin: 8px;
+}
+#event-settings-bttn-container {
+    padding-left: 2%;
+    flex: .25;
+    padding-bottom: 8px;
+}
+#upload-bttn-text {
+    color:  #05314D;
+    font-size: 19px;
+    margin: 8px;
+}
+#settings-bttn-container {
+    padding-left: 2%;
+    flex: .25;
+    padding-bottom: 8px;
+}
+#settings-menu {
+    margin: 6%;
+    position: relative;
+    width: 90%; 
+    margin-top: 0;
+}
+
+.settings-font-family {
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    
+}
+.general-settings-message {
+    color: #545b64;
+    margin-top: 0;
+}
+.settings-title {
+    letter-spacing: normal;
+    color: #16191f;
+    margin-bottom: 0;
+}
+.settings-title h1 {
+    font-weight: 550;
+    font-size: 20px;
+    letter-spacing: normal;
+    color: #16191f;
+    margin-bottom: 0;
+}
+#settings-panel {
+    position: fixed;
+    float: left;
+    top: 0;
+    width: 23px;
+    height: 100%;
+    box-shadow: 0 0 7px 1px #b8b8b8;
+    margin-top: 56px;
+    background-color: white;
+}
+#settings-icon {
+    width: 20px;
+    height: 22px;
+    stroke: #05314D;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    cursor: pointer;
+    padding-top: 1px;
+}
+#settings-close-btn {
+    margin-top:10px;
+    height:25px;
+    width:25px;
+    float: right;
+    padding-right: 3px;
+    background-color:#1C437C;
+    box-shadow: 0 0px 6px 0px #d3d3d3;
+    border-radius:15px;
+    text-align:center;
+}
+#settings-close-btn p{
+    font-family: 'Source Sans Pro', 'Verdana', Arial, sans-serif;
+    color:white;
+    font-size: 10px;
+    position:relative;
+    font-weight: 600;
+    margin-top:3px;
+    margin-left:1px;
+    font-size: 16px;
+    line-height: 20px;
+    cursor:pointer;
+}
+.fa-settings-icon{
+    cursor:pointer;
+    margin-top:10px;
+    display:inline-block;
+    float:right;
+    position:fixed;
+    font-size:20px;
+    color:#1C437C;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+.fa-settings-icon:hover{
+    color:#c2c2c2;
+}
+
+#nav-bar-icons-container{
+    top: 8px;
+    right:20px;
+    width:50px;
+    position:absolute;
+}

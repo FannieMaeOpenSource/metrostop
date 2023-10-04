@@ -1,0 +1,26 @@
+{
+    "process data":{
+        "additional attributes": ["IT Assets","tester2","tester5"]
+    },
+    "general" : {
+        "navbar":{
+            "logo" : "static/logo_dark.svg",
+            "title" : "MetroStop Diagram Generator"
+        },
+        "settings_panel":{
+            "show_start_end_event":"true"
+        }
+    },
+    "process_attr" : {
+        "Related Proteins" : {
+            "data": "assets-data.js"
+        }
+    },
+    "event_attr" : {},
+    "render" : {
+        "sub_process" : {
+            "data": "Related Proteins",
+            "extension": "SystemContext"
+        }
+    }
+}

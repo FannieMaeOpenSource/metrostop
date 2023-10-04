@@ -1,0 +1,107 @@
+@import "src/components/Controls/Controls.css";
+@import "src/components/Legend/Legend.css";
+@import "src/components/Controls/Panel/Panel.css";
+@import "src/components/Settings/Settings.css";
+@import "src/components/Settings/UploadDataButton/UploadDataButton.css";
+@import "src/components/Card/Card.css";
+@import "src/components/Button/Button.css";
+@import 'src/controllers/extensions/CreateSystemContext/CreateSystemContext.css';
+
+:root { 
+    --main-color: "black";
+}
+body {
+    margin: 0;
+}
+.subtitle {
+   font-family: 'Source Sans Pro', 'Verdana', Arial, sans-serif;
+   font-weight: 700;
+   color: #121212;
+   margin: 24px 40px 10px 40px;
+}
+.stop-title { 
+   box-shadow: 0 0px 8px 0px #b8b8b8;
+   border: 1px solid grey;
+}
+.text-font-family{ 
+    font-family: 'Source Sans Pro', 'Verdana', Arial, sans-serif;
+}
+.navbar {
+    box-shadow: 0 0px 4px 4px #f2f2f2;
+    height: 56px;
+    left: 0;
+    position: fixed;
+    overflow: visible;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    position: fixed;
+    background: white;
+}
+.logo_container {
+    
+    float: left;
+    height: 100%;
+    overflow: hidden;
+}
+.nav_title {
+    border-left: 1px solid #05314D;
+    color: #05314D;
+    float: right;
+    font-family:  'Source Sans Pro', 'Verdana', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 14px 0;
+    padding: 0 0 0 20px;
+    user-select: none;
+}
+.logo_svg {
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+.visual {
+    margin-top: 70px;
+    height: 100%;
+}
+#label-btn {
+    color:black;
+    background-color:#05314D;
+    font-family: sans-serif;
+}
+.bttn{
+    margin-top: 20px;
+}
+.unordered-list-items{
+    list-style-type: none;
+    display: inline;
+}
+.unordered-list-items-main{
+    list-style-type: none;
+    
+}
+.list-items {
+    display: block;
+    position: relative;
+}
+.list-items-left {
+    float: left;
+    display: inline;
+}
+.list-items-right{
+    float: right;
+    display: inline;
+    border: 1px solid red;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    padding: 12px 16px;
+    transform: translate(0%, -50%);
+}
+svg {
+    cursor: move;
+}

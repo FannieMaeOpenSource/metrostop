@@ -1,0 +1,8 @@
+{
+  
+"collectCoverage": true,
+"globals": {
+  "window": { "innerHeight": 1000 }
+  }
+}
+  

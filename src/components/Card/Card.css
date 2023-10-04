@@ -1,0 +1,22 @@
+.card-container-header {
+    background-color: #eaeded;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 1px;
+    height: 35px;
+}
+
+.card-container-subtitle {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+ }
+ .card-container {
+    width: 100%;
+    box-shadow: 0 0px 8px 0px #b8b8b8;
+    margin-top: 2%;
+}
+.card-title-desc-container {
+    margin-top: 0;
+    flex: .25;
+}

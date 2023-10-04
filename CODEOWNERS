@@ -1,0 +1,12 @@
+# These are the default owners for everything in this repo. Unless a later match takes precedence,
+
+# They will be requested for review when some opens a pull request.
+
+# These owners are also considered core contributors to this repo and outside contributions will be considered
+
+# toward InnerSource metrics.
+
+# INNER-SOURCE-METRICS @z4ubei
+
+-       @z4ubei
+-       @g9uazb

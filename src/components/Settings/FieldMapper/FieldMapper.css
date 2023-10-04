@@ -1,0 +1,160 @@
+#field-assignment-container {
+    height: fit-content;
+}
+.description-field-assignment {
+    color: #687078;
+    font-size: 12px;
+    padding-left: 2%;
+    margin-top: 0;
+}
+.subtitle-field-assignment {
+    color: #16191f;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 2%;
+    margin-bottom: 0;
+    margin-top: 1%;
+}
+.field-assignment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    gap: 1rem;
+    position: relative;
+}
+
+
+.mid-section-field-assignment { 
+    padding-left: 2%;
+    flex: 4;
+    flex-shrink: 3;
+    display: flex;
+}
+ #mapping-list-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88.5%;
+    flex-direction: column;
+    position: relative;
+}
+#field-value-No-Assignment {
+    padding: 0 0 1% 2%;
+    width: 87.4%;
+    height: 1.51vw;
+    justify-content: space-between;
+    background-color:white;
+    flex-shrink: 3;
+    flex: .25;
+}
+/*
+@media screen and (max-height: 657px) {
+    .mapping-list-container {
+        margin-top: 5%;
+    }
+} 
+@media screen and (max-height: 637px) {
+    .mapping-list-container {
+        margin-top: 6%;
+    }
+}
+
+ */
+ #field-assignment-save-bttn-container{
+     margin-left: 38%;
+     margin-top:1.2%;
+     position: relative;
+     padding-bottom: 2%;
+ }
+ #field-assignment-save-bttn {
+     margin: 0;
+     padding-left:36%;
+     padding-top: 3%;
+ }
+.data-field {
+    height: 100%;
+    width: 100%;
+    background-color: #f3f3f3;
+    position: relative;
+    display: flex;
+    gap: 5%;
+}
+.data-field p{ 
+    top: 0;
+    left: 0;
+    width: 29%;
+    background-color: #99cbe4;
+    color: black;
+    margin: 0;
+    border-style: solid;
+    border-color:  #0a4a74;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: .09px;
+    border-bottom-width: 0px;
+    font-size: 1vw;
+}
+#field-value-No-Assignment p {
+    border-width: 1px;
+    width: 29%;
+}
+.drag-label { 
+    padding: 0px 2px 0px 2px;
+    font-size: .7vw;
+}
+.drag-icon {
+    width: 14px;
+    height: 12px;
+    stroke: black;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    cursor: pointer;
+}
+
+
+.missing-fields-li {
+    width: 100%;
+    height: 100%;
+    padding-right: 6%;
+}
+.missing-fields-ul {
+    height: 17px;
+    overflow-y: scroll !important;
+    list-style-type: none;
+    width: 100%;
+    margin: 0px;
+    background-color: white;
+    padding-right: 2rem;
+}
+.data-field:nth-child(even) {
+    background-color: #e9e9e96b;
+}
+.list-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+                rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px; 
+    margin-top: 1.5%;
+    font-size: .9vw;
+    background-color: white;
+     position: relative;
+}
+.fields-2-map {
+    background-color: #e9e9e96b;
+    height: 12px;
+    width: auto;
+}
+.fields-2-map .mapping-close-bttn {
+    right: 1rem;
+    top: 0rem;
+    font-size: 1rem;
+    color: #ccc;
+    margin-left: 1rem;
+}

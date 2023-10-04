@@ -1,0 +1,9 @@
+
+.controls {
+    top: 75%;
+    width: 80%;
+    height: 90%;
+    position: fixed;
+    float: right;
+    left: 95%;
+}

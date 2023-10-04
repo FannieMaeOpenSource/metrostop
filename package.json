@@ -1,0 +1,48 @@
+{
+  "name": "Metrostop",
+  "version": "1.0.0",
+  "description": "A visualization csv to graph framework to visualizae a life cycle process",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config=jest.config.json",
+    "dev": "webpack serve --config ./bundler/webpack.dev.js",
+    "build": "npx webpack --config ./bundler/webpack.prod.js"
+  },
+  "author": "andre barajas",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^7.4.4",
+    "fs": "0.0.1-security",
+    "papaparse": "^5.3.2",
+    "traceur": "0.0.111"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.1.0",
+    "css-loader": "^6.7.1",
+    "csv-loader": "^3.0.5",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^29.2.2",
+    "json5": "^2.2.3",
+    "mini-css-extract-plugin": "^2.6.1",
+    "portfinder-sync": "0.0.2",
+    "prettier": "2.6.2",
+    "prettier-eslint": "14.0.2",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.13.2",
+    "webpack-merge": "^5.8.0"
+  }
+}

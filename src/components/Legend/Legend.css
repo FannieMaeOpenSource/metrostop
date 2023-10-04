@@ -1,0 +1,14 @@
+.legend-container {
+    fill: #edebe9;
+    font-weight: bold;
+    font-size: 14;
+}
+.highlight-phase-sector {
+    filter: brightness(70%);
+}
+.legend-sector-label {
+    fill: #b3b3b3;
+}
+.legend-phase-label {
+    fill: #696969;
+}
