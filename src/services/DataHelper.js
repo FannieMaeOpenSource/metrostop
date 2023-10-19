@@ -11,8 +11,8 @@ const IsTokenizable = (value) => value.includes("'");
 const GetList4rmString = (text) => text.split("'");
 
 const RemoveSpecialChars = (str) => {
-  const specialChars = /\r/;
-  if (specialChars.test(str)) return str.replace(/\r/, '');
+  const specialChars = /\r/g; // added 'g' flag for global replacement
+  if (specialChars.test(str)) return str.replace(specialChars, '');
   return str;
 };
 /*  Method to the ID of a stop given a stop name in a dataset which is in array format
