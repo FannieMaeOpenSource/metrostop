@@ -34,6 +34,6 @@ To visualize a diagram dataset, open the settings menu (on the left) and upload 
 1. Install the latest version of Node.js available to you.
 2. Open a command line and cd in to project folder.
 3. run command **npm install**
-4. run command **npm start**
+4. run command **npm run build/dev**
 5. Open a browser and enter url **localhost:8080**
 
