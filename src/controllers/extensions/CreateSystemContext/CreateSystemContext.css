@@ -1,0 +1,106 @@
+@import '../../../components/DataTable/DataTable.css';
+#system-context-container {
+    height: 55%;
+    width: 0%;
+    position: fixed;
+    bottom: 0;
+    margin-left: 15%;
+    box-shadow: 0 0px 8px 0px #b8b8b8;
+    margin-bottom: 1%;
+}
+.icons-scd-containers {
+    position: relative;
+    display: flex;
+    height: 33%;
+    width: 100%
+}
+#icons-container i {
+    font-size: 110%;
+    color: #05314D;
+    margin: auto;
+    transition:color;
+    transition-duration: 0.5s;
+}
+#icons-container {
+    color:white;
+    height: 20%;
+    width: 2%;
+    position: fixed;
+    bottom: 40%;
+    margin-left: 72%;
+    box-shadow: 0 0px 8px 0px #b8b8b8;
+    margin-bottom: 1%;
+    z-index:2;
+    transition-property: height;
+    transition-duration: 0.5s;
+}
+#icons-container i:hover{
+    color:#b8b8b8;
+    cursor: pointer;
+}
+.vertex:hover { 
+    cursor: grab;
+}
+.system-context-left-border{
+    border-right: 1px solid #469dd5;
+    position: relative;
+    width: 3%;
+    height: 50%;
+    opacity: 1;
+    margin-right:0;
+    float: left;
+    padding: 0;
+}
+#scd-border-labels-container {
+    position: fixed;
+    pointer-events: none;
+    bottom: 0;
+    margin-left: 5%;
+    height: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    z-index:1;
+}
+#svg-system-context-container{ 
+    position: fixed;
+    bottom: 1%;
+    width: 45%;
+    height: 56%;
+    margin-left: 15%;
+
+}
+#scd-table-diagram { 
+    
+}
+#system-context-svg {
+
+
+}
+.system-context-top-container {
+    position: relative;
+    width: 97%;
+    height: 50%;
+    float: right;
+    background-color: grey;
+    opacity: 20%;
+    
+}
+.system-context-container-label{
+ position: relative;
+ height: 100%;
+ width: 1%;   
+ margin: 0;
+ writing-mode: vertical-lr;
+ text-align: center;
+ font-size: 82%;
+ transform: rotate(-180deg);
+}
+.labels-scd-d3-border{
+    font-size: 12px;
+    font-family:'Source Sans Pro', 'Verdana', Arial, sans-serif;
+    transform: rotate(270deg);
+}
+.radiating-rect{
+    z-index:0;
+}
