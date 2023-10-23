@@ -1,0 +1,39 @@
+{
+    "scd_settings":
+    {
+        "labels":
+        {
+        "top_label":"",
+        "bottom_label":""
+        },
+        "show_border":"False",
+        "node_settings":{
+            "grouping_attribute":"asset_type",
+            "top_class":"Application",
+            "grouping_classes":[
+            "Originate Loan",
+            "Manage Assets",
+            "Securitize",
+            "Data & Reporting",
+            "Enterprise Application"
+            ]
+        }
+    },
+    "table_settings":{
+        "node_settings":{
+            "fields":[
+                "id"
+            ],
+            "fields_plaintext":[
+                "Name"
+            ],
+            "source_name_table":"Protein 1",
+            "target_name_table":"Protein 2"
+        },
+        "link_settings":{
+            "fields":[],
+            "fields_plaintext":[],
+            "link_name_table":"PPI"
+        }
+    }
+}
