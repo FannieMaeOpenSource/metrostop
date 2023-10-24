@@ -1,6 +1,6 @@
 {
-  "name": "metrostop",
-  "version": "1.0.0",
+  "name": "@naveensrinivasan/metrostop",
+  "version": "1.0.1",
   "description": "A visualization csv to graph framework to visualizae a life cycle process",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,10 @@
     "papaparse": "^5.3.2",
     "traceur": "^0.0.49"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "https://github.com/naveensrinivasan/metrostop.git",
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.19.0",
