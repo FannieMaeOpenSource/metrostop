@@ -1,5 +1,5 @@
 {
-  "name": "Metrostop",
+  "name": "metrostop",
   "version": "1.0.0",
   "description": "A visualization csv to graph framework to visualizae a life cycle process",
   "main": "index.js",
