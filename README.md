@@ -1,4 +1,5 @@
 # Metrostop
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/FannieMaeOpenSource/metrostop/badge)](https://securityscorecards.dev/viewer/?uri=github.com/FannieMaeOpenSource/metrostop)
 
 An interactive graph for an end-to-end view. A metrostop is a visual representation of a product's lifecycle which can be used for the maintenance, optimization, analysis and conception of a product's life cycle processes.
 
