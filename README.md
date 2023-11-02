@@ -25,8 +25,6 @@ To visualize a diagram dataset, open the settings menu (on the left) and upload 
 
 ## Requirements
 
-### Production
-
 ### Developement Requirements
 
 > - D3.js Version 7.0.0
