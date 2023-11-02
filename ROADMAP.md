@@ -23,7 +23,7 @@ The Road Map can show the breakdown of all future core team contributions as wel
     - Time 
 - Who is seeing these measurements? - Case study development ?
 - Bug fixing
-- Future Release Features
+- Future Release Features for Q1 2024
   - Dataset Generator GUI
     - Menu option to input data for stops
   - Feature for users to submit notations / feedback. (e.g. Comments / revisions on changes to current state)
