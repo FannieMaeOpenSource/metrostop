@@ -1,13 +1,9 @@
-# Help Wanted Documentation
+# Help Wanted - Metrostop
 
-The Help Wanted section can be optional, but it is highly encouraged. The core team can point to what features they would like to see as well as the skill set needed and difficulty level. Having a strong Help Wanted document empowers our engineers to determine where they can give back to the project.
+Thank you for wanting to help out on our project!  Please read through the following guidance on where we want to see the project moving in the future
 
-This document can also link to a forum where requests and offers are posted as well as contain a list of requests.
+- Read our [Issues](https://github.com/FannieMaeOpenSource/metrostop/issues) to see if something sticks out to you for what you want to work on or feel free to file an issue for an enhancement that you want to work on
+- Read through our [Road Map](https://github.com/FannieMaeOpenSource/metrostop/blob/main/ROADMAP.md) to see where our project is going
 
-# Features in our roadmap
+As always, please feel free to contact the [Metrostop Maintainers](metrostop_maintainers@fanniemae.com) for any questions or issues 
 
-| Feature | Description | Difficulty |
-|---|---|---|
-| Feature for users to submit notations / feedback. (e.g. Comments / revisions on changes to current state) | Allow users to provide comments in the existing panel as a new field in the dataset | Medium |
-| Feature to highlight based on user defined filters by L3 assets | Adding a dropdown to mainbar wherein user selects L3 asset, selected asset either highlight the various stops to a different color or dull out the L3 processes that do not align to the asset | Medium |
-| Dataset Generator GUI | Menu option to input data for stops | Hard|
