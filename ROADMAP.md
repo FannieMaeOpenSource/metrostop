@@ -27,6 +27,6 @@
 ## Future Items
 - Hackathons – OSPO advocacy  
 - Education – Showcase series
-  - Internal/External blog posts
+  - External blog posts
   - Video tutorials
 - Gamifications 
