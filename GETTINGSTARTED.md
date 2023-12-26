@@ -1,13 +1,13 @@
-# Getting Started Processes
+# Getting Started with Metrostop
 
-Whenever a person wants to contribute back or consume a project, it is crucial to have a clear getting started guide.  This ensures that the project has a low barrier for entry which in turn leads to success for the engineering team. 
-
-## How to create a low barrier for entry
+Welcome to the Metrostop project. This guide will provide you with the best practices on getting started within consuming or contributing back to our project
 
 
-- Start up a Teams channel for your project to create a continuous loop of communication between the project team and the external contributors/consumers
-- Label issues with `good-first-issue`
-- [Create issues, feature requests, and pull request templates](https://docs.gitlab.com/ee/user/project/description_templates.html) stating how your team wants all requests to be filled and each including an `innersource` label to be automatically added when published 
-- Include Whatever a contributor might need to get the app up and running before coding 
-- Can be filled in by an intern or some contributors gets started based on feedback about what would have been helpful to get them started  
-- List out who reviews the documentation 
+- Look through our [Open Issues](https://github.com/FannieMaeOpenSource/metrostop/issues) and see if there is a task that you would like to take on
+- Look for issues labeled `good-first-issue` if you are just getting started in the open source process
+- Review our [Project Page](https://github.com/FannieMaeOpenSource/metrostop/projects?query=is%3Aopen) to see the status of the [Open PRs](https://github.com/FannieMaeOpenSource/metrostop/pulls)
+- SLA times for PRs are 30 days
+- File an [Issue](https://github.com/FannieMaeOpenSource/metrostop/issues) for anything that you want to see added or if there is a security issue
+
+Always feel free to contact the [Metrostop Maintainers](metrostop_maintainers@fanniemae.com) with any questions or issues 
+
