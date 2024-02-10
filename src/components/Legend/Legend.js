@@ -59,7 +59,6 @@ function DrawColorWithPhaseLabelOnLegend(
     .attr('y1', yPos)
     .attr('x2', xPosWIncrement + 20)
     .attr('y2', yPos);
-
   const strokeWidth = phaseStroke.node().getBBox().width;
 
   const phaseLabel = container
