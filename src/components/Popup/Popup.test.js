@@ -8,6 +8,7 @@ import {
     ZoomInPopupContainer,
     ZoomOutPopupContainer } from "./Popup";
 import { select } from 'd3-selection';
+import PopupDataStore from "./PopupDataStore";
 const d3 = { select };
 
 describe('AppendPopupContainer will ',()=>{
@@ -81,6 +82,14 @@ describe('AppendPopup will ',()=>{
         "error");
         expect(document.querySelector('#popup i').getAttribute("class"))
             .toBe("fas fa-exclamation-circle");
+    });
+    it('save popup info to datastore',() =>{
+        AppendPopup("This is a test popup",
+        "Test popup",
+        "",
+        "error");
+        expect(PopupDataStore.getData()[0].message)
+            .toBe("This is a test popup");
     });
 });
 describe('AppendPopupNotificationIcon will ',()=>{
