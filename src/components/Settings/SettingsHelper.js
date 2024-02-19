@@ -93,6 +93,12 @@ function SettingsHelper(){
     function getMissingFieldsFound(){
         return missingFieldsFound;
     }
+    function setFieldsFound(newFieldsFound){
+        fieldsFound=newFieldsFound;
+    }
+    function getFieldsFound(){
+        return fieldsFound;
+    }
     // Data processing
     function ProcessUploadedMetrostopData(parsedData) {
         const data = CleanProcessData(parsedData);
@@ -186,8 +192,11 @@ function SettingsHelper(){
         getFields:()=>getFields(),
         getMissingFieldsFound:()=>getMissingFieldsFound(),
         setMissingFieldsFound:(data)=>setMissingFieldsFound(data),
+        getFieldsFound:()=>getFieldsFound(),
+        setFieldsFound:(data)=>setFieldsFound(data),
         AppendSettingsContent:(container)=>AppendSettingsContent(container),
         AppendSettingsMenuIcon:()=>AppendSettingsMenuIcon(),
+        CreateDataSection:(container)=>CreateDataSection(container)
     }
 }
 function CreateNavBarIconContainer(){
@@ -201,5 +210,8 @@ export {
     SettingsHelper,
     CreateSettingsPanelContainer,
     CreateNavBarIconContainer,
-    ProcessEventData
+    ProcessEventData,
+    OpenSettingsPanel,
+    CloseSettingsPanel,
+    CreateEventDataSection
 };
