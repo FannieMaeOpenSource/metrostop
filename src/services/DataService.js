@@ -8,6 +8,7 @@ import {
   FindAndAssignDescendants2Stops,
   RemoveSpecialChars,
   AssignSectorIds2Stops,
+  Check4MetrostopFields
 } from './DataHelper.js';
 
 import DataStore from './DataStore.js';
@@ -114,7 +115,6 @@ function GenerateDataSet(arraysDataSet) {
   }
   finalData = AssignSectorIds2Stops(finalData);
   DataStore.setData({ sectors: finalData });
-
   // Shows error popup if new starting event is not any previous
   // ending event, leading to diagram being rendered as disconnected
   // graphs
@@ -159,6 +159,16 @@ function StoreFields(fields) {
   DataStore.addFields(fields);
 }
 
+/* Method to processdata
+           Params: @arraysDataSet is the dataset in arrays. Where each element in array is an object
+        */
+function ConsumeDataUpdated(arraysDataSet) {
+  const finishCheck = Check4MetrostopFields(arraysDataSet[0]);
+  if(finishCheck.foundAllRequiredFields){
+    throw new Error('Error: Found Fields With No Match');
+  }
+  return finishCheck;
+}
 export {
-  GenerateDataSet, StoreEventData, StoreAttrData, StoreSettings, StoreFields,
+  GenerateDataSet, StoreEventData, StoreAttrData, StoreSettings, StoreFields,ConsumeDataUpdated
 };

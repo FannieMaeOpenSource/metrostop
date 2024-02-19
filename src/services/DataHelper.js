@@ -58,7 +58,7 @@ const Search4Descendants = (targetEndingEvent, stopID, records) => {
     Params: @arraysDataSet is the dataset in arrays
 */
 const FindAndAssignDescendants2Stops = (arraysDataSet) =>
-  // eslint-disable-next-line implicit-arrow-linebreak
+  // eslint-disable-next-line implicit-arrow-linebreak\
   arraysDataSet.map((record) => {
     const clonedRecord = { ...record };
     const { stop_id: stopID, ending_event: endingEvent } = clonedRecord;
@@ -326,6 +326,7 @@ function Labels_x(params) {
 }
 
 function Labels_y(params) {
+  console.log(param);
   let {
     returnVal, i, d, nodes, xMargin, stop, rectHeight,
   } = params;
@@ -337,6 +338,57 @@ function Labels_y(params) {
   return { finalX, ret: d.x + stop.cy + 7.1 - rectHeight / 2 };
 }
 
+/* Method to traverse a sample row from dataset input to find missing fields
+       Params: @sampleRow is one row from the dataset input
+    */
+function Check4MetrostopFields(sampleRow) {
+  const keys = Object.keys(sampleRow);
+  let foundAllRequiredFields = true;
+  const requiredFields = {
+    sector_name: { foundField: false },
+    phase_name: { foundField: false },
+    stop_name: { foundField: false },
+    stop_parent: { foundField: false },
+    cx: { foundField: false },
+    cy: { foundField: false },
+    starting_event: { foundField: false },
+    ending_event: { foundField: false },
+    stop_path: { foundField: false },
+    phase_color: { foundField: false },
+    stop_has_line: { foundField: false },
+    stop_label_position: { foundField: false },
+  };
+  const fieldsFound=[];
+  let missingFieldsFound = [];
+  keys.forEach((key) => {
+    let noMatch = true;
+    const metroStopFieldKeyValue = requiredFields[key];
+    if (metroStopFieldKeyValue !== undefined) requiredFields[key].foundField = true;
+
+    DataStore.getFields().forEach((field) => {
+      if (noMatch) {
+        if (key === field) {
+          fieldsFound.push(key);
+          noMatch = false;
+        }
+      }
+    });
+    if (noMatch) {
+      missingFieldsFound.push(key);
+      foundAllRequiredFields = false;
+    }
+  });
+  return {
+    foundAllRequiredFields,
+    missingFieldsFound,
+    fieldsFound,
+    requiredFields
+  };
+}
+
+function CleanProcessData(parsedData){
+  return parsedData.filter((row) => row.stop_name);
+}
 export {
   CreateActivity,
   FindStopIdUsingStopName,
@@ -357,4 +409,6 @@ export {
   Rectangles_y,
   Labels_x,
   Labels_y,
+  Check4MetrostopFields,
+  CleanProcessData
 };

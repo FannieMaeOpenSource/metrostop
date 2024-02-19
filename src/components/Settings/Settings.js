@@ -9,9 +9,11 @@ import {
   StoreAttrData,
   StoreSettings,
   StoreFields,
+  ConsumeDataUpdated,
 } from '../../services/DataService.js';
 import UiController from '../../controllers/UiController.js';
 import { AppendPopup, AppendPopupContainer, AppendPopupNotificationIcon } from '../Popup/Popup.js';
+import { CleanProcessData } from '../../services/DataHelper.js';
 
 const d3 = { select };
 let settingsPanelContainer;
@@ -45,7 +47,6 @@ async function GetPluginData(plugin) {
   }
 }
 
-const CleanProcessData = (parsedData) => parsedData.filter((row) => row.stop_name);
 
 const FIELDS = [
   'sector_name',
@@ -143,14 +144,17 @@ function ProcessUploadedMetrostopData(parsedData) {
   missingFieldsFound = [];
   fieldsFound = [];
   const data = CleanProcessData(parsedData);
-  const foundAllfields = ConsumeData(data);
+  const fieldInfo = ConsumeDataUpdated(data);
+  const foundAllfields=fieldInfo.foundAllRequiredFields;
   if (!foundAllfields) {
-    fieldMapper.AppendUnknownFields2NoAssignmentSection(missingFieldsFound, fieldsFound);
+    fieldMapper.AppendUnknownFields2NoAssignmentSection(
+      fieldInfo.missingFieldsFound, fieldInfo.fieldsFound
+    );
   }
 
-  const fields = Object.keys(requiredFields);
+  const fields = Object.keys(fieldInfo.requiredFields);
   const fieldsCount = fields.length;
-
+  const requiredFields=fieldInfo.requiredFields;
   let trueCount = 0;
   fields.forEach((field) => {
     if (requiredFields[field].foundField === true) trueCount += 1;
@@ -235,7 +239,7 @@ function AppendSettingsContent(container) {
 }
 
 // UI Rendering
-function AppendSettingsMenuIcon() {
+export function AppendSettingsMenuIcon() {
   const settingsIcon = d3
     .select('#nav-bar-icons-container')
     .append('i')
@@ -277,28 +281,22 @@ async function LoadProcessAttrData() {
     );
   }
 }
-// Initiate settings menu
-export async function CreateSettingsMenu() {
-  settings = await loadSettings();
+
+export function CreateSettingsPanelContainer(){
   settingsPanelContainer = d3
     .select('.vis-body')
     .append('div')
     .attr('id', constants.SETTINGS_PANEL_ID);
+}
+export function CreateNavBarIconContainer(){
   const navBarIconContainer = d3
     .select('.navbar')
     .append('div')
     .attr('id', 'nav-bar-icons-container');
-  StoreFields(FIELDS);
-  AppendSettingsMenuIcon();
-  try {
-    CreateNavBar(settings.general.navbar.logo, settings.general.navbar.title);
-  } catch (err) {
-    console.log('Something went wrong!', err);
-  }
-  // creating the popups
-  //  This function creates a container to hold the summaries of popups
-  const popupContainer = AppendPopupContainer(d3.select('.vis-body'));
-  AppendPopupNotificationIcon(navBarIconContainer);
+  return navBarIconContainer;
+}
+
+export function AppendDefaultPopups(){
   AppendPopup(
     'Click the settings icon to configure diagram with new datasets.',
     'Learn about the settings menu',
@@ -311,6 +309,24 @@ export async function CreateSettingsMenu() {
     'far fa-circle',
     'normal',
   );
+}
+
+// Initiate settings menu
+export async function CreateSettingsMenu() {
+  settings = await loadSettings();
+  CreateSettingsPanelContainer();
+  const navBarIconContainer = CreateNavBarIconContainer();
+  StoreFields(FIELDS);
+  AppendSettingsMenuIcon();
+  try {
+    CreateNavBar(settings.general.navbar.logo, settings.general.navbar.title);
+  } catch (err) {
+    console.log('Something went wrong!', err);
+  }
+
+  const popupContainer = AppendPopupContainer(d3.select('.vis-body'));
+  AppendPopupNotificationIcon(navBarIconContainer);
+  AppendDefaultPopups();
 
   const ProcessData = await GetPluginData('process-data.js');
   ProcessUploadedMetrostopData(ProcessData);
