@@ -359,7 +359,7 @@ function Check4MetrostopFields(sampleRow) {
     stop_label_position: { foundField: false },
   };
   const fieldsFound=[];
-  let missingFieldsFound = [];
+  const missingFieldsFound = [];
   keys.forEach((key) => {
     let noMatch = true;
     const metroStopFieldKeyValue = requiredFields[key];
@@ -374,6 +374,7 @@ function Check4MetrostopFields(sampleRow) {
       }
     });
     if (noMatch) {
+      
       missingFieldsFound.push(key);
       foundAllRequiredFields = false;
     }

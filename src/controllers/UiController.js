@@ -135,7 +135,6 @@ class UiControllerClass {
     this._intervalsStatus = val;
   }
   /* eslint-enable */
-
   zoom = d3.zoom().on('zoom', HandleZoom);
 
   /* Method to Generate the visualization svg on html document */

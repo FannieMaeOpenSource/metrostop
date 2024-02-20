@@ -18,7 +18,7 @@ import DataStore from '../../services/DataStore.js';
 
 function ProcessEventData(data) {
     StoreEventData(data);
-  }
+}
 
 function CreateSettingsPanelContainer(){
     const settingsPanelContainer = d3
