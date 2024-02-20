@@ -1,6 +1,5 @@
 import { select } from 'd3-selection';
 import * as fieldMapper from './FieldMapper/FieldMapper.js';
-import CreateUploadButton from './UploadDataButton/UploadDataButton.js';
 import * as card from '../Card/Card.js';
 import { CreatePanel } from '../Controls/Panel/Panel.js';
 import {

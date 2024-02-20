@@ -34,4 +34,4 @@ function CreateUploadButton(buttonContainer, bttnTextId, HandleDataUpload) {
     });
 }
 
-export default CreateUploadButton;
+export {UploadFileBttnClicked,CreateUploadButton};

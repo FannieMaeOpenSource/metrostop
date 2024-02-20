@@ -1,6 +1,6 @@
 import { select } from 'd3-selection';
 import * as fieldMapper from './FieldMapper/FieldMapper.js';
-import CreateUploadButton from './UploadDataButton/UploadDataButton.js';
+import {CreateUploadButton} from './UploadDataButton/UploadDataButton.js';
 import * as card from '../Card/Card.js';
 import { CreatePanel } from '../Controls/Panel/Panel.js';
 import {
@@ -15,7 +15,7 @@ import UiController from '../../controllers/UiController.js';
 import { AppendPopup, AppendPopupContainer, AppendPopupNotificationIcon } from '../Popup/Popup.js';
 import { CleanProcessData } from '../../services/DataHelper.js';
 import DataStore from '../../services/DataStore.js';
-
+const d3 = { select};
 function ProcessEventData(data) {
     StoreEventData(data);
 }
@@ -106,8 +106,6 @@ function SettingsHelper(){
         const foundAllfields=fieldInfo.foundAllRequiredFields;
         missingFieldsFound=fieldInfo.missingFieldsFound;
         fieldsFound = fieldInfo.fieldsFound;
-        console.log(missingFieldsFound);
-        console.log(fieldsFound);
         if (!foundAllfields) {
             fieldMapper.AppendUnknownFields2NoAssignmentSection(
                 missingFieldsFound, fieldsFound
@@ -157,8 +155,7 @@ function SettingsHelper(){
             const clostBtn = d3.select('#settings-panel').append('div').attr('id', 'settings-close-btn');
             clostBtn.append('p').text('X');
             AppendSettingsContent(d3.select('#settings-panel'));
-            console.log(missingFieldsFound);
-            console.log(fieldsFound);
+
             fieldMapper.AppendUnknownFields2NoAssignmentSection(getMissingFieldsFound(), fieldsFound);
             clostBtn.on('click', () => {
               CloseSettingsPanel();
