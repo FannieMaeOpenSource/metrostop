@@ -1,11 +1,18 @@
 {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "entry",
-          "corejs": "3.22"
-        }
+  "env":{
+    "test":{
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": "entry",
+            "corejs": "3.22"
+          }
+        ]
+      ],
+      "plugins": [
+        "babel-plugin-transform-import-meta"
       ]
-    ]
+    }
   }
+}

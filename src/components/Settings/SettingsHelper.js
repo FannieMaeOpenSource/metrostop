@@ -187,7 +187,7 @@ function SettingsHelper(){
     }
     return {
         ProcessUploadedMetrostopData:(parsedData)=>ProcessUploadedMetrostopData(parsedData),
-        setDefaultFields:(data)=>setDefaultFields(data),
+        setDefaultFields:()=>setDefaultFields(),
         setFields:(data)=>setFields(data),
         getFields:()=>getFields(),
         getMissingFieldsFound:()=>getMissingFieldsFound(),

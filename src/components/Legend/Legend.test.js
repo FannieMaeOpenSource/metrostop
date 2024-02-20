@@ -40,7 +40,7 @@ describe('CreateLegend will ',()=>{
               x: 0,
               y: 0,
             }),
-        })
+        });
         CreateLegend(visGroup,lastYPos,sectors);
     });
     
