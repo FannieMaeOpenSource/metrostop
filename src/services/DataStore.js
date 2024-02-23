@@ -4,6 +4,7 @@ let events = {};
 const detailedEvents = {};
 let settings = {};
 let fields = [];
+let processCSV={};
 
 const DataStore = {
   setData: (localData) => {
@@ -35,6 +36,10 @@ const DataStore = {
     fields = localFields;
   },
   getFields: () => fields,
+  getProcessCSV:()=>processCSV,
+  addProcessCSV:(data)=> {
+    processCSV=data;
+  }
 };
 Object.freeze(DataStore);
 

@@ -163,9 +163,7 @@ function StoreFields(fields) {
            Params: @arraysDataSet is the dataset in arrays. Where each element in array is an object
         */
 function ConsumeDataUpdated(arraysDataSet) {
-  console.log(arraysDataSet);
   const finishCheck = Check4MetrostopFields(arraysDataSet[0]);
-  console.log(finishCheck);
   if(!(finishCheck.foundAllRequiredFields)){
     console.error('Error: Found Fields With No Match');
   }

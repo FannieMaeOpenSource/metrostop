@@ -1,7 +1,8 @@
 import { select, selectAll } from 'd3-selection';
 import AppendButton from '../../Button/Button.js';
 import * as card from '../../Card/Card.js';
-
+import DataStore from '../../../services/DataStore.js';
+import { SettingsHelper } from '../SettingsHelper.js';
 const d3 = { select, selectAll };
 const noAssignmentString = 'No Assignment';
 
@@ -9,38 +10,43 @@ let draggableField;
 let draggableFieldDimensions = [];
 const noAssignmentId = `field-value-${noAssignmentString.replace(' ', '-')}`;
 
-// function SaveMappedFields(requiredFields, metaDataFields) {
-//   const fieldsMapped = document.getElementsByClassName('metrostop-data-model');
-//   fieldsMapped.map((field) => {
-//     if (field.getAttribute('value') !== 'No-Assignment') {
-//       const val = field.getAttribute('value');
-//       const key = requiredFields[val];
-//       if (key === undefined) {
-//         requiredFields[val] = { foundField: true };
-//       }
-//       if (field.childElementCount > 1) {
-//         const datasetField = field
-//           .getElementsByClassName('field-mapper-assign-area')[0].getAttribute('value');
-//         if (datasetField !== undefined) {
-//           requiredFields[val].value = datasetField;
-//         }
-//       }
-//     }
-//     return null;
-//   });
-//   //   for (const field of fieldsMapped) {
-
-//   //   }
-//   const fieldsNotAssigned = document.getElementsByClassName('unknown-field');
-//   if (fieldsNotAssigned.length > 0) {
-//     fieldsNotAssigned.map((fieldNotMapped) => {
-//       metaDataFields.push(fieldNotMapped.getAttribute('value'));
-//       return null;
-//     });
-//   }
-// // let fieldsNotMapped = document.getElementsByClassName("missing-fields-li").
-// //   getElementsByClassName("fiel-mapper-assign-area");
-// }
+function SaveMappedFields() {
+  const fieldsMapped = Array.from(document.getElementsByClassName('metrostop-data-model'));
+  const updated_key_value={};
+  fieldsMapped.forEach((field) => {
+    if (field.getAttribute('value') !== 'No-Assignment') {
+      const val = field.getAttribute('value');
+      if (field.childElementCount > 1) {
+        const datasetField = field
+          .getElementsByClassName('field-mapper-assign-area')[0].getAttribute('value');
+        if (datasetField !== undefined) {
+          if(val!==datasetField){
+            updated_key_value[datasetField]=val;
+          }
+        }
+      }
+    }
+  });
+  if(Object.keys(updated_key_value).length>0){
+    const processCSV=DataStore.getProcessCSV();
+    const newProcessCSV=[];
+    processCSV.forEach((row)=>{
+      let tempRow = {};
+      Object.keys(row).forEach((key)=>{
+        if(key in updated_key_value){
+          tempRow[updated_key_value[key]]=row[key];
+        } else{
+          tempRow[key]=row[key];
+        }
+      });
+      newProcessCSV.push(tempRow);
+    });
+    DataStore.addProcessCSV(newProcessCSV);
+    const settingsHelper = SettingsHelper();
+    settingsHelper.setDefaultFields();
+    settingsHelper.ProcessUploadedMetrostopData(newProcessCSV);
+  }
+}
 
 function AppendSaveButton(fieldAssignmentContainer, fields) {
   const saveBttnId = 'field-assignment-save-bttn';
@@ -50,7 +56,8 @@ function AppendSaveButton(fieldAssignmentContainer, fields) {
   const saveBtn = AppendButton(saveBttnId, bttnContainer, 'Save');
   saveBtn
     .on('mouseover', () => d3.select(`#${saveBttnId}`).style('color', 'white'))
-    .on('mouseout', () => d3.select(`#${saveBttnId}`).style('color', '#05314D'));
+    .on('mouseout', () => d3.select(`#${saveBttnId}`).style('color', '#05314D'))
+    .on('click', () => SaveMappedFields());
 }
 
 /* Method to append all Metro stop fields to list

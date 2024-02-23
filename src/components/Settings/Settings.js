@@ -114,8 +114,9 @@ export async function CreateSettingsMenu() {
   AppendDefaultPopups();
 
   const ProcessData = await GetPluginData('process-data.js');
+  console.log(ProcessData);
+  DataStore.addProcessCSV(ProcessData);
   settingsHelper.ProcessUploadedMetrostopData(ProcessData);
-  console.log({ ProcessData });
   const EventData = await GetPluginData('events-data.js');
   console.log({ EventData });
   ProcessEventData(EventData);
