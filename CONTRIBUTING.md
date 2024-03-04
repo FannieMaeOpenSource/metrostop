@@ -24,7 +24,7 @@ Once your PR is issued, we will review your work and determine whether it will b
 For more details about contributing to GitHub projects see
 https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html
 
-If you have any questions, please reach out the [Open Source Program Office](ospoteam@fanniemae.com) and the [Metrostop Maintainers](metrostop_github@fanniemae.com). 
+If you have any questions, please reach out the [Open Source Program Office](mailto:ospoteam@fanniemae.com) and the [Metrostop Maintainers](mailto:metrostop_github@fanniemae.com). 
 
 
 
